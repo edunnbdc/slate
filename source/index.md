@@ -1,14 +1,13 @@
 ---
-title: API Reference
+title: Bill.com API Developer Portal
 
 language_tabs:
-  - shell
-  - ruby
-  - python
+  - shell: cURL
+  - php: PHP
+  - python: Python
 
 toc_footers:
   - <a href='#'>Sign Up for a Developer Key</a>
-  - <a href='http://github.com/tripit/slate'>Documentation Powered by Slate</a>
 
 includes:
   - errors
@@ -16,15 +15,18 @@ includes:
 search: true
 ---
 
-# Introduction
+# Platform Overview
 
-Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
+The Bill.com Developer Platform lets you interact with the Bill.com service through easy-to-use APIs, enabling you to automate the actions that a Bill.com user would perform through our application. This documentation walks you through various aspects of the platform, to get you started on building a high-quality integration with Bill.com. 
 
-We have language bindings in Shell, Ruby, and Python! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
+# API Mechanics
 
-This example API documentation page was created with [Slate](http://github.com/tripit/slate). Feel free to edit it and use it as a base for your own API's documentation.
+This section describes the mechanics of Bill.com API - the end points, request and response formats as well as error handling. 
+End Points
 
-# Authentication
+Login API requests always need to use the URL: https://api.bill.com/api/v2/
+
+The subsequent calls should be made to the apiEndPoint (refered as <API End Point URL>  throughout this document) returned on the Login call.  All entities (exceptions noted) can be created, updated and read using the same set of CRUD (Create, Read, Update & Delete) operations. The API end point follows the format :  <API End Point URL>/Crud/<Operation>/<Entity>.json where Operation is one of the following: Create, Update, Read, Delete, Undelete. 
 
 > To authorize, use this code:
 
@@ -58,9 +60,9 @@ Kittn expects for the API key to be included in all API requests to the server i
 You must replace <code>meowmeowmeow</code> with your personal API key.
 </aside>
 
-# Kittens
+# API Reference
 
-## Get All Kittens
+## Approval Policy
 
 ```ruby
 require 'kittn'
@@ -119,7 +121,54 @@ available | true | If set to false, the result will include kittens that have al
 Remember — a happy kitten is an authenticated kitten!
 </aside>
 
-## Get a Specific Kitten
+## Approval Policy Approver
+
+```ruby
+require 'kittn'
+
+api = Kittn::APIClient.authorize!('meowmeowmeow')
+api.kittens.get(2)
+```
+
+```python
+import kittn
+
+api = kittn.authorize('meowmeowmeow')
+api.kittens.get(2)
+```
+
+```shell
+curl "http://example.com/api/kittens/2"
+  -H "Authorization: meowmeowmeow"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "id": 2,
+  "name": "Isis",
+  "breed": "unknown",
+  "fluffiness": 5,
+  "cuteness": 10
+}
+```
+
+This endpoint retrieves a specific kitten.
+
+<aside class="warning">If you're not using an administrator API key, note that some kittens will return 403 Forbidden if they are hidden for admins only.</aside>
+
+### HTTP Request
+
+`GET http://example.com/kittens/<ID>`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+ID | The ID of the kitten to retrieve
+
+## Bank Account
 
 ```ruby
 require 'kittn'
