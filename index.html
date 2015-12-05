@@ -4,18 +4,13 @@
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>API Reference</title>
+    <title>Bill.com API Developer Portal</title>
 
     <link href="stylesheets/screen.css" rel="stylesheet" type="text/css" media="screen" />
     <link href="stylesheets/print.css" rel="stylesheet" type="text/css" media="print" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
       <script src="javascripts/all.js" type="text/javascript"></script>
 
-      <script>
-        $(function() {
-          setupLanguages(["shell","ruby","python"]);
-        });
-      </script>
   </head>
 
   <body class="index">
@@ -27,11 +22,6 @@
     </a>
     <div class="tocify-wrapper">
       <img src="images/logo.png" />
-        <div class="lang-selector">
-              <a href="#" data-language-name="shell">shell</a>
-              <a href="#" data-language-name="ruby">ruby</a>
-              <a href="#" data-language-name="python">python</a>
-        </div>
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
         </div>
@@ -39,88 +29,311 @@
       <div id="toc">
       </div>
         <ul class="toc-footer">
-            <li><a href='#'>Sign Up for a Developer Key</a></li>
-            <li><a href='http://github.com/tripit/slate'>Documentation Powered by Slate</a></li>
+            <li><a href='http://developer.bill.com/dev-program/sign-up'>Sign Up for a Developer Key</a></li>
         </ul>
     </div>
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
-        <h1 id='introduction'>Introduction</h1>
-<p>Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.</p>
+        <h1 id="platform-overview">Platform Overview</h1>
 
-<p>We have language bindings in Shell, Ruby, and Python! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.</p>
+<p>The Bill.com Developer Platform lets you interact with the Bill.com service through easy-to-use APIs, enabling you to automate the actions that a Bill.com user would perform through our application. This documentation walks you through various aspects of the platform, to get you started on building a high-quality integration with Bill.com. </p>
 
-<p>This example API documentation page was created with <a href="http://github.com/tripit/slate">Slate</a>. Feel free to edit it and use it as a base for your own API&rsquo;s documentation.</p>
-<h1 id='authentication'>Authentication</h1>
-<blockquote>
-<p>To authorize, use this code:</p>
-</blockquote>
-<pre><code class="highlight ruby"><span class="nb">require</span> <span class="s1">'kittn'</span>
+<p>Whether you are a Marketplace, 3rd Party App or a Power User, our API will enable tight integration with Bill.com.  </p>
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre>
-<pre><code class="highlight python"><span class="kn">import</span> <span class="nn">kittn</span>
+<p>You&rsquo;ll also know that you are connected to a solution trusted by over 800,000 members paying and receiving over $25 billion per year.  Bill.com is the leading Business Payments Network.  Bill.com is tightly synched with leading accounting software including Quickbooks, Xero, NetSuite, Intacct and more. </p>
 
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre>
-<pre><code class="highlight shell"><span class="c"># With shell, you can just pass the correct header with each request</span>
-curl <span class="s2">"api_endpoint_here"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre>
+<p>All of these benefits of <strong>Bill.com Payables</strong> and more are supported via our API:</p>
 
-<blockquote>
-<p>Make sure to replace <code class="prettyprint">meowmeowmeow</code> with your API key.</p>
-</blockquote>
+<table><thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead><tbody>
+<tr>
+<td><img alt="No More Filing Cabinets" src="http://www.bill.com/sites/all/themes/bdc_bootstrap/images/features_chunk/Flying-Cabinet_180x150.png" /> <strong>No More Filing Cabinets</strong></td>
+<td><img alt="No more paperwork to shuffle" src="http://www.bill.com/sites/all/themes/bdc_bootstrap/images/features_chunk/No-More-Paper_180x150.png" /><strong>No more paperwork to shuffle</strong></td>
+</tr>
+<tr>
+<td><img alt="No more waiting on approvers" src="http://www.bill.com/sites/all/themes/bdc_bootstrap/images/features_chunk/Clock_180x180.png" /> <strong>No more waiting on approvers</strong></td>
+<td><img alt="No more vendor-go-round" src="http://www.bill.com/sites/all/themes/bdc_bootstrap/images/features_chunk/Roundabout_180x180.png" /> <strong>No more vendor-go-round</strong></td>
+</tr>
+</tbody></table>
 
-<p>Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our <a href="http://example.com/developers">developer portal</a>.</p>
+<p>All of these benefits of <strong>Bill.com Receivables</strong> and more are supported via our API:</p>
 
-<p>Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:</p>
+<table><thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead><tbody>
+<tr>
+<td><img alt="You choose the payment method" src="http://www.bill.com/sites/all/themes/bdc_bootstrap/images/features_chunk/ACH-Credit-Card_180x180.png" /> <strong>You choose the payment method</strong></td>
+<td><img alt="We send the invoices for you" src="http://www.bill.com/sites/all/themes/bdc_bootstrap/images/features_chunk/Open-Mail_180x180.png" /> <strong>We send the invoices for you</strong></td>
+</tr>
+<tr>
+<td><img alt="Bill.com sends automatic reminders by email" src="http://www.bill.com/sites/all/themes/bdc_bootstrap/images/features_chunk/Caution-Screen_180x180.png" /> <strong>Bill.com sends automatic reminders by email</strong></td>
+<td><img alt="Online payments go straight into your bank account" src="http://www.bill.com/sites/all/themes/bdc_bootstrap/images/features_chunk/Money-in-Pocket_180x180.png" /> <strong>Online payments go straight into your bank account</strong></td>
+</tr>
+</tbody></table>
 
-<p><code class="prettyprint">Authorization: meowmeowmeow</code></p>
+<h2 id="marketplace">MarketPlace</h2>
 
-<p><aside class="notice">
-You must replace <code class="prettyprint">meowmeowmeow</code> with your personal API key.
-</aside></p>
-<h1 id='kittens'>Kittens</h1><h2 id='get-all-kittens'>Get All Kittens</h2><pre><code class="highlight ruby"><span class="nb">require</span> <span class="s1">'kittn'</span>
+<p>You are an online marketplace connecting one or more parties in an economic exchange.  You can power funds-transfer using Bill.com Payment APIs while eliminating risk related to storing user&rsquo;s bank account details.</p>
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span>
-</code></pre>
-<pre><code class="highlight python"><span class="kn">import</span> <span class="nn">kittn</span>
+<p><img alt="Bill.com Awards" src="https://github.com/edunnbdc/Images/blob/master/BDC%20Awards.png?raw=true" /></p>
 
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
-</code></pre>
-<pre><code class="highlight shell">curl <span class="s2">"http://example.com/api/kittens"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre>
+<h2 id="3rd-party-app">3rd Party App</h2>
 
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<pre><code class="highlight json"><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fluffums"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"calico"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Isis"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
-</span></code></pre>
+<p>You need to develop data integration between Bill.com and your own application, for clients or as a white labeled solution.  </p>
+
+<p><img alt="Bill.com App Integrations" src="https://github.com/edunnbdc/Images/blob/master/Bill.com%20App%20Integrations.png?raw=true" /></p>
+
+<h2 id="power-user">Power User</h2>
+
+<p>You have a large volume of transactions.  You can automate Bill.com features and integrate with your other 3rd party platforms.</p>
+
+<h1 id="api-mechanics">API Mechanics</h1>
+
+<p>This section describes the mechanics of Bill.com API - the end points, request and response formats. </p>
+
+<h2 id="end-points">End Points</h2>
+
+<p>Login API requests always need to use the URL: <code class="prettyprint">https://api.bill.com/api/v2/</code></p>
+
+<p>The subsequent calls should be made to the <code class="prettyprint">apiEndPoint</code> (referred as <API End Point URL>  throughout this document) returned on the Login call.  All entities (exceptions noted) can be created, updated and read using the same set of CRUD (Create, Read, Update &amp; Delete) operations. The API end point follows the format :  <code class="prettyprint">&lt;API End Point URL&gt;/Crud/&lt;Operation&gt;/&lt;Entity&gt;.json</code> where Operation is one of the following: Create, Update, Read, Delete, Undelete. </p>
+
+<p>The response from the Bill.com API is JSON, which is described in the rest of this document. </p>
+
+<h2 id="request-format">Request Format</h2>
+
+<p>We recommend that all API requests are to be made using an http POST method. There are three required parameters that need to be passed with each call (except ListOrgs and Login)</p>
+
+<ul>
+<li>devKey (or appkey) </li>
+<li>sessionId </li>
+<li>data</li>
+</ul>
+
+<p>All the API parameters are to be passed as <code class="prettyprint">POST</code> parameters.</p>
+
+<p>Content-Type is to be set to <code class="prettyprint">application/x-www-form-urlencoded</code>. Note that to upload a file to Bill.com Inbox or to attach a document to an object in Bill.com via <code class="prettyprint">UploadAttachment</code> API, you must set the content-type to <code class="prettyprint">multipart/form-data</code>. </p>
+
+<h2 id="response-format">Response Format</h2>
+
+<p>The Bill.com API responses always have the three name/value pairs</p>
+
+<ul>
+<li>response_status : 0 for success, or 1 for error.</li>
+<li>response_message: can be &ldquo;Success&rdquo; or &ldquo;Error&rdquo;</li>
+<li>response_data: will have all the information returned, such as a list of records or any errors, etc. </li>
+</ul>
+
+<p>We may introduce additional values for the status and message in the future.</p>
+
+<h1 id="payables">Payables</h1>
+
+<h2 id="create-vendor">Create Vendor</h2>
+
+<p>The vendor object holds information about the companies and people your company pays for goods and services. If your vendors are part of the Bill.com network, meaning they have a Bill.com Receivables account, their bills will be delivered as eBills and will be paid electronically. If your vendors are not part of the Bill.com network, Bill.com either prints and mails checks to your vendors, or sends them an electronic payment. You can invite the vendors to set up electronic payments, through your Bill.com account or through Bill.com API.</p>
+
+<h3 id="request">Request</h3>
+
+<p><API URL End Point>/Crud/Create/Vendor.json
+    data={
+       &ldquo;obj&rdquo; : {
+          &ldquo;entity&rdquo; : &ldquo;Vendor&rdquo;,
+          &ldquo;isActive&rdquo; : &ldquo;1&rdquo;,
+          &ldquo;name&rdquo; : &ldquo;Sample Vendor 1&rdquo;
+       }
+    }</p>
+
+<h3 id="response">Response</h3>
+
+<p>{
+       &ldquo;response_status&rdquo; : 0,
+       &ldquo;response_message&rdquo; : &ldquo;Success&rdquo;,
+       &ldquo;response_data&rdquo; : {
+           &ldquo;entity&rdquo; : &ldquo;Vendor&rdquo;,
+           &ldquo;id&rdquo; : &ldquo;00901FLEDIKRCILHfyui&rdquo;,
+           &ldquo;isActive&rdquo; : &ldquo;1&rdquo;,
+           &ldquo;name&rdquo; : &ldquo;Sample Vendor 1&rdquo;,
+           &ldquo;nameOnCheck&rdquo; : null,
+           &ldquo;accNumber&rdquo; : null,
+           &ldquo;taxId&rdquo; : null,
+           &ldquo;track1099&rdquo; : false,
+           &ldquo;address1&rdquo; : null,
+           &ldquo;address2&rdquo; : null,
+           &ldquo;address3&rdquo; : null,
+           &ldquo;address4&rdquo; : null,
+           &ldquo;addressCity&rdquo; : null,
+           &ldquo;addressState&rdquo; : null,
+           &ldquo;addressZip&rdquo; : null,
+           &ldquo;addressCountry&rdquo; : null,
+           &ldquo;email&rdquo; : null,
+           &ldquo;fax&rdquo; : null,
+           &ldquo;phone&rdquo; : null,
+           &ldquo;payBy&rdquo; : &ldquo;0&rdquo;,
+           &ldquo;description&rdquo; : null,
+           &ldquo;createdTime&rdquo; : &ldquo;2012-11-14T20:48:04.000+0000&rdquo;,
+           &ldquo;updatedTime&rdquo; : &ldquo;2012-11-14T20:48:04.000+0000&rdquo;
+       }
+    }</p>
+
+<h2 id="create-bill">Create Bill</h2>
+
+<p>Creating a Bill is a little different than creating other Bill.com objects because bills contain one or more bill line items. The bill line items are contained in a list (similar to line items for vendor credits and invoices). When creating a Bill, each bill line item can be assigned to either an expense account or to an item. Here is an example where the first bill line item is assigned to an item and the second bill line item is assigned to an expense account (chart of account).
+When you retrieve a Bill, the response contains all the bill attributes as well as attributes for each bill line item.</p>
+
+<h3 id="request">Request</h3>
+
+<p><API URL End Point>/Crud/Create/Bill.json
+    data={
+       &ldquo;obj&rdquo; : {
+          &ldquo;entity&rdquo; : &ldquo;Bill&rdquo;,
+          &ldquo;isActive&rdquo; : &ldquo;1&rdquo;,
+          &ldquo;vendorId&rdquo; : &ldquo;00901XZBIUHKIHNTeanq&rdquo;,
+          &ldquo;invoiceNumber&rdquo; : &ldquo;1234A&rdquo;,
+          &ldquo;invoiceDate&rdquo; : &ldquo;2012-11-14&rdquo;,
+          &ldquo;dueDate&rdquo; : &ldquo;2012-11-14&rdquo;,
+          &ldquo;glPostingDate&rdquo; : &ldquo;2012-11-14&rdquo;,
+          &ldquo;description&rdquo; : &ldquo;Bill description&rdquo;,
+          &ldquo;billLineItems&rdquo; : [ {
+             &ldquo;entity&rdquo; : &ldquo;BillLineItem&rdquo;,
+             &ldquo;amount&rdquo; : 200.00,
+             &ldquo;chartOfAccountId&rdquo; : &ldquo;0ca01QXZWLVTZBAD5bah&rdquo;,
+             &ldquo;departmentId&rdquo; : &ldquo;0de01BGWFJYOEBFRRd39&rdquo;,
+             &ldquo;locationId&rdquo; : &ldquo;loc01AZSDXOQCFZDP7nd&rdquo;,
+             &ldquo;description&rdquo; : &ldquo;Lineitem for expenses&rdquo;,
+             &ldquo;lineType&rdquo; : &ldquo;1&rdquo;,
+             &ldquo;actgClassId&rdquo; : &ldquo;cls01SIYVBONRTDX1u4t&rdquo;
+          }, {
+             &ldquo;entity&rdquo; : &ldquo;BillLineItem&rdquo;,
+             &ldquo;amount&rdquo; : 400.00,
+             &ldquo;departmentId&rdquo; : &ldquo;0de01BGWFJYOEBFRRd39&rdquo;,
+             &ldquo;locationId&rdquo; : &ldquo;loc01AZSDXOQCFZDP7nd&rdquo;,
+             &ldquo;description&rdquo; : &ldquo;Line item with items&rdquo;,
+             &ldquo;lineType&rdquo; : &ldquo;2&rdquo;,
+             &ldquo;quantity&rdquo; : 2,
+             &ldquo;unitPrice&rdquo; : 200.00,
+             &ldquo;actgClassId&rdquo; : &ldquo;cls01SIYVBONRTDX1u4t&rdquo;
+          } ]
+       }
+    }</p>
+
+<h3 id="response">Response</h3>
+
+<p>{
+      &ldquo;response_status&rdquo; : 0,
+      &ldquo;response_message&rdquo; : &ldquo;Success&rdquo;,
+      &ldquo;response_data&rdquo; : {
+        &ldquo;entity&rdquo; : &ldquo;Bill&rdquo;,
+        &ldquo;id&rdquo; : &ldquo;00n01ELUVVEVLWIYoslo&rdquo;,
+        &ldquo;isActive&rdquo; : &ldquo;1&rdquo;,
+        &ldquo;vendorId&rdquo; : &ldquo;00901XZBIUHKIHNTeanq&rdquo;,
+        &ldquo;invoiceNumber&rdquo; : &ldquo;1234A&rdquo;,
+        &ldquo;approvalStatus&rdquo; : &ldquo;1&rdquo;,
+        &ldquo;invoiceDate&rdquo; : &ldquo;2012-11-14&rdquo;,
+        &ldquo;dueDate&rdquo; : &ldquo;2012-11-14&rdquo;,
+        &ldquo;glPostingDate&rdquo; : &ldquo;2012-11-14&rdquo;,
+        &ldquo;amount&rdquo; : 600.00,
+        &ldquo;paidAmount&rdquo; : null,
+        &ldquo;paymentStatus&rdquo; : &ldquo;1&rdquo;,
+        &ldquo;description&rdquo; : &ldquo;Bill description&rdquo;,
+        &ldquo;createdTime&rdquo; : &ldquo;2013-10-28T04:41:49.000+0000&rdquo;,
+        &ldquo;updatedTime&rdquo; : &ldquo;2013-10-28T04:41:54.000+0000&rdquo;,
+        &ldquo;payFromBankAccountId&rdquo; : &ldquo;00000000000000000000&rdquo;,
+        &ldquo;payFromChartOfAccountId&rdquo; : &ldquo;00000000000000000000&rdquo;,
+        &ldquo;billLineItems&rdquo; : [ {
+          &ldquo;entity&rdquo; : &ldquo;BillLineItem&rdquo;,
+          &ldquo;id&rdquo; : &ldquo;bli01TYXGJSTPPEMqqzs&rdquo;,
+          &ldquo;billId&rdquo; : &ldquo;00n01ELUVVEVLWIYoslo&rdquo;,
+          &ldquo;amount&rdquo; : 200.00,
+          &ldquo;chartOfAccountId&rdquo; : &ldquo;0ca01QXZWLVTZBAD5bah&rdquo;,
+          &ldquo;departmentId&rdquo; : &ldquo;0de01BGWFJYOEBFRRd39&rdquo;,
+          &ldquo;locationId&rdquo; : &ldquo;loc01AZSDXOQCFZDP7nd&rdquo;,
+          &ldquo;jobId&rdquo; : &ldquo;00000000000000000000&rdquo;,
+          &ldquo;customerId&rdquo; : &ldquo;00000000000000000000&rdquo;,
+          &ldquo;jobBillable&rdquo; : false,
+          &ldquo;description&rdquo; : &ldquo;Lineitem for expenses&rdquo;,
+          &ldquo;createdTime&rdquo; : &ldquo;2013-10-28T04:41:50.000+0000&rdquo;,
+          &ldquo;updatedTime&rdquo; : &ldquo;2013-10-28T04:41:53.000+0000&rdquo;,
+          &ldquo;lineType&rdquo; : &ldquo;1&rdquo;,
+          &ldquo;itemId&rdquo; : &ldquo;00000000000000000000&rdquo;,
+          &ldquo;quantity&rdquo; : null,
+          &ldquo;unitPrice&rdquo; : null,
+          &ldquo;employeeId&rdquo; : &ldquo;00000000000000000000&rdquo;,
+          &ldquo;actgClassId&rdquo; : &ldquo;cls01SIYVBONRTDX1u4t&rdquo;
+        }, {
+          &ldquo;entity&rdquo; : &ldquo;BillLineItem&rdquo;,
+          &ldquo;id&rdquo; : &ldquo;bli01OBVTAIGZUAJqqzt&rdquo;,
+          &ldquo;billId&rdquo; : &ldquo;00n01ELUVVEVLWIYoslo&rdquo;,
+          &ldquo;amount&rdquo; : 400.00,
+          &ldquo;chartOfAccountId&rdquo; : &ldquo;00000000000000000000&rdquo;,
+          &ldquo;departmentId&rdquo; : &ldquo;0de01BGWFJYOEBFRRd39&rdquo;,
+          &ldquo;locationId&rdquo; : &ldquo;loc01AZSDXOQCFZDP7nd&rdquo;,
+          &ldquo;jobId&rdquo; : &ldquo;00000000000000000000&rdquo;,
+          &ldquo;customerId&rdquo; : &ldquo;00000000000000000000&rdquo;,
+          &ldquo;jobBillable&rdquo; : false,
+          &ldquo;description&rdquo; : &ldquo;Line item with items&rdquo;,
+          &ldquo;createdTime&rdquo; : &ldquo;2013-10-28T04:41:51.000+0000&rdquo;,
+          &ldquo;updatedTime&rdquo; : &ldquo;2013-10-28T04:41:54.000+0000&rdquo;,
+          &ldquo;lineType&rdquo; : &ldquo;1&rdquo;,
+          &ldquo;itemId&rdquo; : &ldquo;00000000000000000000&rdquo;,
+          &ldquo;quantity&rdquo; : 2,
+          &ldquo;unitPrice&rdquo; : 200.00,
+          &ldquo;employeeId&rdquo; : &ldquo;00000000000000000000&rdquo;,
+          &ldquo;actgClassId&rdquo; : &ldquo;cls01SIYVBONRTDX1u4t&rdquo;
+        } ]
+      }
+    }</p>
+
+<h2 id="pay-bill">Pay Bill</h2>
+
+<p>SAMPLE REQUEST:</p>
+
+<p><Endpoint>/api/v2/PayBills.json?sessionId=<sessionid>&amp;devKey=<devKey></p>
+
+<h1 id="receivables">Receivables</h1>
+
+<h2 id="create-customer">Create Customer</h2>
+
+<p>SAMPLE REQUEST:</p>
+
+<p><API URL End Point>/Crud/Create/Customer.json?sessionId=<sessionid>&amp;devKey=<devKey></p>
+
+<h2 id="create-invoice-record">Create Invoice Record</h2>
+
+<p>SAMPLE REQUEST:</p>
+
+<p><API URL End Point>/Crud/Create/Invoice.json?sessionId=<sessionid>&amp;devKey=<devKey></p>
+
+<h2 id="send-the-invoice">Send the Invoice</h2>
+
+<p>SAMPLE REQUEST:</p>
+
+<p><API URL End Point>/SendInvoice.json?sessionId=<sessionid>&amp;devKey=<devKey></p>
+
+<h2 id="charge-the-customer">Charge the Customer</h2>
+
+<p>SAMPLE REQUEST:</p>
+
+<p><API URL End Point>/Crud/Read/ReceivedPay.jsonsessionId=<sessionid>&amp;devKey=<devKey></p>
+
+<h1 id="api-reference">API Reference</h1>
+
+<h2 id="approval-policy">Approval Policy</h2>
 
 <p>This endpoint retrieves all kittens.</p>
-<h3 id='http-request'>HTTP Request</h3>
-<p><code class="prettyprint">GET http://example.com/kittens</code></p>
-<h3 id='query-parameters'>Query Parameters</h3>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET http://example.com/api/kittens</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -140,41 +353,22 @@ You must replace <code class="prettyprint">meowmeowmeow</code> with your persona
 </tr>
 </tbody></table>
 
-<p><aside class="success">
+<aside class="success">
 Remember — a happy kitten is an authenticated kitten!
-</aside></p>
-<h2 id='get-a-specific-kitten'>Get a Specific Kitten</h2><pre><code class="highlight ruby"><span class="nb">require</span> <span class="s1">'kittn'</span>
+</aside>
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre>
-<pre><code class="highlight python"><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre>
-<pre><code class="highlight shell">curl <span class="s2">"http://example.com/api/kittens/3"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre>
-
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<pre><code class="highlight json"><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Isis"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
+<h2 id="approval-policy-approver">Approval Policy Approver</h2>
 
 <p>This endpoint retrieves a specific kitten.</p>
 
-<p><aside class="warning">If you&rsquo;re not using an administrator API key, note that some kittens will return 403 Forbidden if they are hidden for admins only.</aside></p>
-<h3 id='http-request'>HTTP Request</h3>
+<aside class="warning">If you&rsquo;re not using an administrator API key, note that some kittens will return 403 Forbidden if they are hidden for admins only.</aside>
+
+<h3 id="http-request">HTTP Request</h3>
+
 <p><code class="prettyprint">GET http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters'>URL Parameters</h3>
+
+<h3 id="url-parameters">URL Parameters</h3>
+
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -183,12 +377,87 @@ Remember — a happy kitten is an authenticated kitten!
 </thead><tbody>
 <tr>
 <td>ID</td>
-<td>The ID of the cat to retrieve</td>
+<td>The ID of the kitten to retrieve</td>
 </tr>
 </tbody></table>
 
-          <h1 id='errors'>Errors</h1>
-<p><aside class="notice">This error section is stored in a separate file in <code class="prettyprint">includes/_errors.md</code>. Slate allows you to optionally separate out your docs into many files&hellip;just save them to the <code class="prettyprint">includes</code> folder and add them to the top of your <code class="prettyprint">index.md</code>&rsquo;s frontmatter. Files are included in the order listed.</aside></p>
+<h2 id="bank-account">Bank Account</h2>
+
+<p>This endpoint retrieves a specific kitten.</p>
+
+<aside class="warning">If you&rsquo;re not using an administrator API key, note that some kittens will return 403 Forbidden if they are hidden for admins only.</aside>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET http://example.com/kittens/&lt;ID&gt;</code></p>
+
+<h3 id="url-parameters">URL Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ID</td>
+<td>The ID of the kitten to retrieve</td>
+</tr>
+</tbody></table>
+
+<h2 id="bill">Bill</h2>
+
+<p>This endpoint retrieves a specific kitten.</p>
+
+<aside class="warning">If you&rsquo;re not using an administrator API key, note that some kittens will return 403 Forbidden if they are hidden for admins only.</aside>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET http://example.com/kittens/&lt;ID&gt;</code></p>
+
+<h3 id="url-parameters">URL Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ID</td>
+<td>The ID of the kitten to retrieve</td>
+</tr>
+</tbody></table>
+
+<h2 id="bill-payment">Bill Payment</h2>
+
+<p>This endpoint retrieves a specific kitten.</p>
+
+<aside class="warning">If you&rsquo;re not using an administrator API key, note that some kittens will return 403 Forbidden if they are hidden for admins only.</aside>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET http://example.com/kittens/&lt;ID&gt;</code></p>
+
+<h3 id="url-parameters">URL Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ID</td>
+<td>The ID of the kitten to retrieve</td>
+</tr>
+</tbody></table>
+
+<h2 id="all-the-other-entities-from-the-api-reference">All the other Entities from the API Reference&hellip;.</h2>
+
+          <h1 id="errors">Errors</h1>
+
+<aside class="notice">This error section is stored in a separate file in `includes/_errors.md`. Slate allows you to optionally separate out your docs into many files&hellip;just save them to the `includes` folder and add them to the top of your `index.md`&rsquo;s frontmatter. Files are included in the order listed.</aside>
 
 <p>The Kittn API uses the following error codes:</p>
 
@@ -200,7 +469,7 @@ Remember — a happy kitten is an authenticated kitten!
 </thead><tbody>
 <tr>
 <td>400</td>
-<td>Bad Request &ndash; Your request sucks</td>
+<td>Bad Request &ndash; Your request is not valid</td>
 </tr>
 <tr>
 <td>401</td>
@@ -208,15 +477,15 @@ Remember — a happy kitten is an authenticated kitten!
 </tr>
 <tr>
 <td>403</td>
-<td>Forbidden &ndash; The kitten requested is hidden for administrators only</td>
+<td>Forbidden &ndash; The entity requested is hidden for administrators only</td>
 </tr>
 <tr>
 <td>404</td>
-<td>Not Found &ndash; The specified kitten could not be found</td>
+<td>Not Found &ndash; The specified entity could not be found</td>
 </tr>
 <tr>
 <td>405</td>
-<td>Method Not Allowed &ndash; You tried to access a kitten with an invalid method</td>
+<td>Method Not Allowed &ndash; You tried to access an entity with an invalid method</td>
 </tr>
 <tr>
 <td>406</td>
@@ -224,7 +493,7 @@ Remember — a happy kitten is an authenticated kitten!
 </tr>
 <tr>
 <td>410</td>
-<td>Gone &ndash; The kitten requested has been removed from our servers</td>
+<td>Gone &ndash; The entity requested has been removed from our servers</td>
 </tr>
 <tr>
 <td>418</td>
@@ -232,7 +501,7 @@ Remember — a happy kitten is an authenticated kitten!
 </tr>
 <tr>
 <td>429</td>
-<td>Too Many Requests &ndash; You&rsquo;re requesting too many kittens! Slown down!</td>
+<td>Too Many Requests &ndash; You&rsquo;re requesting too many kittens! Slow down!</td>
 </tr>
 <tr>
 <td>500</td>
@@ -246,11 +515,6 @@ Remember — a happy kitten is an authenticated kitten!
 
       </div>
       <div class="dark-box">
-          <div class="lang-selector">
-                <a href="#" data-language-name="shell">shell</a>
-                <a href="#" data-language-name="ruby">ruby</a>
-                <a href="#" data-language-name="python">python</a>
-          </div>
       </div>
     </div>
   </body>
